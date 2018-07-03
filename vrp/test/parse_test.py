@@ -10,11 +10,13 @@
 # --------------------------------------------------------------------------------
 import os
 
-from vrp import PROJECT_ROOT, ParseJsonFormat
+from vrp import PROJECT_ROOT, DataTransformItem
 
 
 _json_file = os.path.join(PROJECT_ROOT, "data/data.json")
-json_parse = ParseJsonFormat(_json_file)
+json_parse = DataTransformItem(_json_file)
 json_parse.transform()
+
+print(json_parse.get_vehicle_capacity())
 for loc in json_parse.get_node_demand():
     print(loc)

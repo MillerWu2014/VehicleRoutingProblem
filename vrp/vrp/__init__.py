@@ -9,6 +9,6 @@
 # log       :包含修改时间、修改人、修改line及原因
 # --------------------------------------------------------------------------------
 import os
-from .parse import ParseJsonFormat
+from .parse import DataTransformItem
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

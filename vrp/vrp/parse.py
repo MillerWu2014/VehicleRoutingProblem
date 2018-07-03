@@ -13,7 +13,7 @@ import json
 import typing
 
 
-class ParseJsonFormat(object):
+class DataTransformItem(object):
     """ Parsing the json data, transform to format python object
     argument
     --------

@@ -9,20 +9,6 @@
 # log       :包含修改时间、修改人、修改line及原因
 # --------------------------------------------------------------------------------
 
-"""Capacitated Vehicle Routing Problem (CVRP).
-
-   This is a sample using the routing library python wrapper to solve a CVRP
-   problem.
-   A description of the problem can be found here:
-   http://en.wikipedia.org/wiki/Vehicle_routing_problem.
-
-   Distances are in meters and time in seconds.
-
-   Manhattan average block: 750ft x 264ft -> 228m x 80m
-   src: https://nyti.ms/2GDoRIe "NY Times: Know Your distance"
-   here we use: 114m x 80m city block
-"""
-
 from __future__ import print_function
 from six.moves import xrange
 from ortools.constraint_solver import pywrapcp
@@ -32,12 +18,12 @@ from ortools.constraint_solver import routing_enums_pb2
 ###########################
 # Problem Data Definition #
 ###########################
-class Vehicle(object):
+class Vehicle():
     """Stores the property of a vehicle"""
 
     def __init__(self):
         """Initializes the vehicle properties"""
-        self._capacity = 10
+        self._capacity = 15
 
     @property
     def capacity(self):
@@ -45,7 +31,7 @@ class Vehicle(object):
         return self._capacity
 
 
-class CityBlock(object):
+class CityBlock():
     """City block definition"""
 
     @property
@@ -59,7 +45,7 @@ class CityBlock(object):
         return 80
 
 
-class DataProblem(object):
+class DataProblem():
     """Stores the data for the problem"""
 
     def __init__(self):
